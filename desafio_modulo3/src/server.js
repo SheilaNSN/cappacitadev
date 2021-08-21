@@ -44,20 +44,8 @@ app.post('/batalha', (req, res) => {
     res.send(dataBase.batalhaPokemon(req.body.id1, req.body.id2))
 })
 
-
 app.put('/curar/:id', (req, res) => {
-
-    const pokemon = dataBase.curarPokemon(req.params.id, {
-        nome: req.body.nome,
-        tipo: req.body.tipo,
-        fraqueza: req.body.fraqueza,
-        resistencia: req.body.resistencia,
-        hp: 100,
-        id: parseInt(req.params.id)
-    })
-    res.send(pokemon)
+    res.send(dataBase.curarPokemon(req.params.id))
 })
-
-
 
 app.listen(3003)
